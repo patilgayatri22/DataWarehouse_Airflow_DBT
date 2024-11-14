@@ -1,0 +1,54 @@
+[2024-11-12T04:30:12.264+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-12T04:30:12.282+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2024-11-12T04:29:57.223364+00:00 [queued]>
+[2024-11-12T04:30:12.285+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_dbt.dbt_snapshot manual__2024-11-12T04:29:57.223364+00:00 [queued]>
+[2024-11-12T04:30:12.285+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-12T04:30:12.290+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): dbt_snapshot> on 2024-11-12 04:29:57.223364+00:00
+[2024-11-12T04:30:12.293+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_dbt', 'dbt_snapshot', 'manual__2024-11-12T04:29:57.223364+00:00', '--job-id', '261', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_dbt.py', '--cfg-path', '/tmp/tmpl2dqq68w']
+[2024-11-12T04:30:12.295+0000] {standard_task_runner.py:91} INFO - Job 261: Subtask dbt_snapshot
+[2024-11-12T04:30:12.295+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=2506) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-12T04:30:12.296+0000] {standard_task_runner.py:63} INFO - Started process 2507 to run task
+[2024-11-12T04:30:12.314+0000] {task_command.py:426} INFO - Running <TaskInstance: BuildELT_dbt.dbt_snapshot manual__2024-11-12T04:29:57.223364+00:00 [running]> on host c4dbd180ae41
+[2024-11-12T04:30:12.343+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_dbt' AIRFLOW_CTX_TASK_ID='dbt_snapshot' AIRFLOW_CTX_EXECUTION_DATE='2024-11-12T04:29:57.223364+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-12T04:29:57.223364+00:00'
+[2024-11-12T04:30:12.343+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-12T04:30:12.350+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2024-11-12T04:30:12.350+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '/home/***/.local/bin/dbt snapshot --profiles-dir /opt/***/lab --project-dir /opt/***/lab']
+[2024-11-12T04:30:12.354+0000] {subprocess.py:86} INFO - Output:
+[2024-11-12T04:30:13.379+0000] {subprocess.py:93} INFO - [0m04:30:13  Running with dbt=1.8.7
+[2024-11-12T04:30:13.870+0000] {subprocess.py:93} INFO - [0m04:30:13  Registered adapter: snowflake=1.8.4
+[2024-11-12T04:30:14.055+0000] {subprocess.py:93} INFO - [0m04:30:14  Found 3 models, 1 test, 1 snapshot, 2 sources, 459 macros
+[2024-11-12T04:30:14.056+0000] {subprocess.py:93} INFO - [0m04:30:14
+[2024-11-12T04:30:16.018+0000] {subprocess.py:93} INFO - [0m04:30:16  Concurrency: 1 threads (target='dev')
+[2024-11-12T04:30:16.019+0000] {subprocess.py:93} INFO - [0m04:30:16
+[2024-11-12T04:30:16.029+0000] {subprocess.py:93} INFO - [0m04:30:16  1 of 1 START snapshot snapshot.snapshot_macd_calculation ....................... [RUN]
+[2024-11-12T04:30:16.672+0000] {subprocess.py:93} INFO - [0m04:30:16  1 of 1 ERROR snapshotting snapshot.snapshot_macd_calculation ................... [[31mERROR[0m in 0.64s]
+[2024-11-12T04:30:16.677+0000] {subprocess.py:93} INFO - [0m04:30:16
+[2024-11-12T04:30:16.678+0000] {subprocess.py:93} INFO - [0m04:30:16  Finished running 1 snapshot in 0 hours 0 minutes and 2.62 seconds (2.62s).
+[2024-11-12T04:30:16.712+0000] {subprocess.py:93} INFO - [0m04:30:16
+[2024-11-12T04:30:16.712+0000] {subprocess.py:93} INFO - [0m04:30:16  [31mCompleted with 1 error and 0 warnings:[0m
+[2024-11-12T04:30:16.713+0000] {subprocess.py:93} INFO - [0m04:30:16
+[2024-11-12T04:30:16.713+0000] {subprocess.py:93} INFO - [0m04:30:16    Database Error in snapshot snapshot_macd_calculation (snapshots/snapshot.macd_calculation.sql)
+[2024-11-12T04:30:16.713+0000] {subprocess.py:93} INFO -   000904 (42000): SQL compilation error: error line 7 at position 33
+[2024-11-12T04:30:16.713+0000] {subprocess.py:93} INFO -   invalid identifier 'TS'
+[2024-11-12T04:30:16.714+0000] {subprocess.py:93} INFO - [0m04:30:16
+[2024-11-12T04:30:16.714+0000] {subprocess.py:93} INFO - [0m04:30:16  Done. PASS=0 WARN=0 ERROR=1 SKIP=0 TOTAL=1
+[2024-11-12T04:30:17.309+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2024-11-12T04:30:17.310+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-12T04:30:17.324+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2024-11-12T04:30:17.329+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=BuildELT_dbt, task_id=dbt_snapshot, run_id=manual__2024-11-12T04:29:57.223364+00:00, execution_date=20241112T042957, start_date=20241112T043012, end_date=20241112T043017
+[2024-11-12T04:30:17.339+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 261 for task dbt_snapshot (Bash command failed. The command returned a non-zero exit code 1.; 2507)
+[2024-11-12T04:30:17.343+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-12T04:30:17.350+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-12T04:30:17.350+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

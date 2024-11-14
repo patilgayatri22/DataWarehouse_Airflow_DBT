@@ -1,0 +1,33 @@
+[2024-11-12T00:16:08.516+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-12T00:16:08.532+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Pipeline_STOCK_ETL.trigger_pipeline_continuation scheduled__2024-11-11T00:00:00+00:00 [queued]>
+[2024-11-12T00:16:08.535+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Pipeline_STOCK_ETL.trigger_pipeline_continuation scheduled__2024-11-11T00:00:00+00:00 [queued]>
+[2024-11-12T00:16:08.535+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-12T00:16:08.540+0000] {taskinstance.py:2330} INFO - Executing <Task(TriggerDagRunOperator): trigger_pipeline_continuation> on 2024-11-11 00:00:00+00:00
+[2024-11-12T00:16:08.548+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=8881) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-12T00:16:08.546+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Pipeline_STOCK_ETL', 'trigger_pipeline_continuation', 'scheduled__2024-11-11T00:00:00+00:00', '--job-id', '196', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipeline_ETL_Lab2.py', '--cfg-path', '/tmp/tmpboxp584e']
+[2024-11-12T00:16:08.549+0000] {standard_task_runner.py:91} INFO - Job 196: Subtask trigger_pipeline_continuation
+[2024-11-12T00:16:08.548+0000] {standard_task_runner.py:63} INFO - Started process 8884 to run task
+[2024-11-12T00:16:08.577+0000] {task_command.py:426} INFO - Running <TaskInstance: Pipeline_STOCK_ETL.trigger_pipeline_continuation scheduled__2024-11-11T00:00:00+00:00 [running]> on host 4a66d1a109be
+[2024-11-12T00:16:08.617+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Pipeline_STOCK_ETL' AIRFLOW_CTX_TASK_ID='trigger_pipeline_continuation' AIRFLOW_CTX_EXECUTION_DATE='2024-11-11T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-11-11T00:00:00+00:00'
+[2024-11-12T00:16:08.618+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-12T00:16:08.642+0000] {trigger_dagrun.py:222} INFO - Waiting for BuildELT_dbt on 2024-11-12 00:16:08.618676+00:00 to become allowed state ['success'] ...
+[2024-11-12T00:17:08.689+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-12T00:17:08.708+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/trigger_dagrun.py", line 233, in execute
+    raise AirflowException(f"{self.trigger_dag_id} failed with failed states {state}")
+airflow.exceptions.AirflowException: BuildELT_dbt failed with failed states failed
+[2024-11-12T00:17:08.717+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=Pipeline_STOCK_ETL, task_id=trigger_pipeline_continuation, run_id=scheduled__2024-11-11T00:00:00+00:00, execution_date=20241111T000000, start_date=20241112T001608, end_date=20241112T001708
+[2024-11-12T00:17:08.735+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 196 for task trigger_pipeline_continuation (BuildELT_dbt failed with failed states failed; 8884)
+[2024-11-12T00:17:08.781+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-11-12T00:17:08.796+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-11-12T00:17:08.797+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

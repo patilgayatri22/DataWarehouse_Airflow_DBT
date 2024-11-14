@@ -1,0 +1,4 @@
+[2024-11-06T01:37:29.704+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-06T01:37:29.899+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: YfinanceToSnowflake.load scheduled__2024-10-24T02:30:00+00:00 [queued]>
+[2024-11-06T01:37:29.942+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: YfinanceToSnowflake.load scheduled__2024-10-24T02:30:00+00:00 [queued]>
+[2024-11-06T01:37:29.950+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1

@@ -1,0 +1,72 @@
+[2024-10-24T22:41:18.975+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-24T22:41:18.992+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: SetupETLtables.load manual__2024-10-24T22:41:16.932489+00:00 [queued]>
+[2024-10-24T22:41:18.995+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: SetupETLtables.load manual__2024-10-24T22:41:16.932489+00:00 [queued]>
+[2024-10-24T22:41:18.996+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-24T22:41:19.002+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load> on 2024-10-24 22:41:16.932489+00:00
+[2024-10-24T22:41:19.008+0000] {warnings.py:110} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61: DeprecationWarning: This process (pid=253) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2024-10-24T22:41:19.008+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'SetupETLtables', 'load', 'manual__2024-10-24T22:41:16.932489+00:00', '--job-id', '66', '--raw', '--subdir', 'DAGS_FOLDER/etl_table_snowflake.py', '--cfg-path', '/tmp/tmpzlg7if5s']
+[2024-10-24T22:41:19.008+0000] {standard_task_runner.py:63} INFO - Started process 256 to run task
+[2024-10-24T22:41:19.009+0000] {standard_task_runner.py:91} INFO - Job 66: Subtask load
+[2024-10-24T22:41:19.035+0000] {task_command.py:426} INFO - Running <TaskInstance: SetupETLtables.load manual__2024-10-24T22:41:16.932489+00:00 [running]> on host 64c676815d01
+[2024-10-24T22:41:19.080+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='SetupETLtables' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-10-24T22:41:16.932489+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-24T22:41:16.932489+00:00'
+[2024-10-24T22:41:19.082+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-24T22:41:19.088+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2024-10-24T22:41:19.089+0000] {connection.py:399} INFO - Snowflake Connector for Python Version: 3.10.0, Python Version: 3.12.3, Platform: Linux-6.10.4-linuxkit-aarch64-with-glibc2.36
+[2024-10-24T22:41:19.090+0000] {connection.py:1239} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2024-10-24T22:41:19.733+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T22:41:20.268+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T22:41:20.925+0000] {logging_mixin.py:188} INFO - 100080 (22000): 01b7e9d1-0004-0da3-0001-8e6b0003908e: Number of columns in file (2) does not match that of the corresponding table (3), use file format option error_on_column_count_mismatch=false to ignore this error
+  File 'readonly/session_timestamp.csv', line 3, character 1
+  Row 1 starts at line 2, column "SESSION_TIMESTAMP"["SESSIONID":2]
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client.
+[2024-10-24T22:41:20.925+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-24T22:41:20.926+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/decorators/base.py", line 265, in execute
+    return_value = super().execute(context)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 400, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 235, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 252, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/etl_table_snowflake.py", line 53, in load
+    raise e
+  File "/opt/airflow/dags/etl_table_snowflake.py", line 50, in load
+    cur.execute(sql_session)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/cursor.py", line 1080, in execute
+    Error.errorhandler_wrapper(self.connection, self, error_class, errvalue)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 290, in errorhandler_wrapper
+    handed_over = Error.hand_to_other_handler(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 345, in hand_to_other_handler
+    cursor.errorhandler(connection, cursor, error_class, error_value)
+  File "/home/airflow/.local/lib/python3.12/site-packages/snowflake/connector/errors.py", line 221, in default_errorhandler
+    raise error_class(
+snowflake.connector.errors.ProgrammingError: 100080 (22000): 01b7e9d1-0004-0da3-0001-8e6b0003908e: Number of columns in file (2) does not match that of the corresponding table (3), use file format option error_on_column_count_mismatch=false to ignore this error
+  File 'readonly/session_timestamp.csv', line 3, character 1
+  Row 1 starts at line 2, column "SESSION_TIMESTAMP"["SESSIONID":2]
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client.
+[2024-10-24T22:41:20.938+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=SetupETLtables, task_id=load, run_id=manual__2024-10-24T22:41:16.932489+00:00, execution_date=20241024T224116, start_date=20241024T224118, end_date=20241024T224120
+[2024-10-24T22:41:20.947+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 66 for task load (100080 (22000): 01b7e9d1-0004-0da3-0001-8e6b0003908e: Number of columns in file (2) does not match that of the corresponding table (3), use file format option error_on_column_count_mismatch=false to ignore this error
+  File 'readonly/session_timestamp.csv', line 3, character 1
+  Row 1 starts at line 2, column "SESSION_TIMESTAMP"["SESSIONID":2]
+  If you would like to continue loading when an error is encountered, use other values such as 'SKIP_FILE' or 'CONTINUE' for the ON_ERROR option. For more information on loading options, please run 'info loading_data' in a SQL client.; 256)
+[2024-10-24T22:41:20.955+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2024-10-24T22:41:20.976+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-24T22:41:20.977+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,136 @@
+[0m12:12:57.184930 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107483a70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x107671550>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1076712e0>]}
+
+
+============================== 12:12:57.187538 | cffab177-c30c-433f-9780-012237102537 ==============================
+[0m12:12:57.187538 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:12:57.187826 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'version_check': 'True', 'log_path': 'logs', 'debug': 'False', 'profiles_dir': '/Users/gayatripatil/.dbt', 'use_colors': 'True', 'use_experimental_parser': 'False', 'empty': 'None', 'quiet': 'False', 'no_print': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt init dbt', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:14:03.337581 [debug] [MainThread]: Starter project path: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:14:03.349717 [info ] [MainThread]: 
+Your new dbt project "exut" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:14:03.350238 [info ] [MainThread]: Setting up your profile.
+[0m12:14:59.871032 [error] [MainThread]: Encountered an error:
+
+[0m12:14:59.887699 [error] [MainThread]: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 262, in setup_profile
+    adapter = self.ask_for_adapter_choice()
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 243, in ask_for_adapter_choice
+    numeric_choice = click.prompt(prompt_msg, type=click.INT)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/termui.py", line 164, in prompt
+    value = prompt_func(prompt)
+            ^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/termui.py", line 147, in prompt_func
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:14:59.945817 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 122.795746, "process_user_time": 0.608125, "process_kernel_time": 0.19279, "process_mem_max_rss": "92848128", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:14:59.946939 [debug] [MainThread]: Command `dbt init` failed at 12:14:59.946771 after 122.80 seconds
+[0m12:14:59.947734 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10762e4b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106b7a000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1074fcc80>]}
+[0m12:14:59.948440 [debug] [MainThread]: Flushing usage events
+[0m12:20:41.732902 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104d1f4a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10686d2b0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10686d070>]}
+
+
+============================== 12:20:41.735538 | d6eee311-8a2b-4ec8-84e7-68090eb80460 ==============================
+[0m12:20:41.735538 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:20:41.735818 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/gayatripatil/.dbt', 'log_path': 'logs', 'fail_fast': 'False', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt init build_lab2', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m12:20:41.744272 [debug] [MainThread]: Starter project path: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:20:41.748088 [info ] [MainThread]: 
+Your new dbt project "build_lab2" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:20:41.748254 [info ] [MainThread]: Setting up your profile.
+[0m12:21:39.671229 [error] [MainThread]: Encountered an error:
+
+[0m12:21:39.688859 [error] [MainThread]: Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 138, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/requires.py", line 101, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/cli/main.py", line 470, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 347, in run
+    self.setup_profile(profile_name)
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 249, in setup_profile
+    if not self.check_if_can_write_profile(profile_name=profile_name):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/task/init.py", line 212, in check_if_can_write_profile
+    response = click.confirm(
+               ^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/click/termui.py", line 235, in confirm
+    raise Abort() from None
+click.exceptions.Abort
+
+[0m12:21:39.694668 [debug] [MainThread]: Resource report: {"command_name": "init", "command_wall_clock_time": 57.99537, "process_user_time": 0.551835, "process_kernel_time": 0.133022, "process_mem_max_rss": "93650944", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:21:39.696031 [debug] [MainThread]: Command `dbt init` failed at 12:21:39.695853 after 58.00 seconds
+[0m12:21:39.697800 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106389fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1065c4440>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10512a0c0>]}
+[0m12:21:39.698831 [debug] [MainThread]: Flushing usage events
+[0m12:24:54.657754 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1048acdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b516a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x104b51160>]}
+
+
+============================== 12:24:54.660630 | 4da33025-a468-4dc9-8a9d-3cc575fbfd7a ==============================
+[0m12:24:54.660630 [info ] [MainThread]: Running with dbt=1.8.7
+[0m12:24:54.660965 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/gayatripatil/.dbt', 'version_check': 'True', 'warn_error': 'None', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'empty': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt init lab', 'static_parser': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m12:24:54.669423 [debug] [MainThread]: Starter project path: /Library/Frameworks/Python.framework/Versions/3.12/lib/python3.12/site-packages/dbt/include/starter_project
+[0m12:24:54.673279 [info ] [MainThread]: 
+Your new dbt project "lab" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m12:24:54.673456 [info ] [MainThread]: Setting up your profile.
+[0m12:26:21.565869 [info ] [MainThread]: Profile lab written to /Users/gayatripatil/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m12:26:21.576601 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 86.95217, "process_user_time": 0.876599, "process_kernel_time": 0.282062, "process_mem_max_rss": "150175744", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m12:26:21.577807 [debug] [MainThread]: Command `dbt init` succeeded at 12:26:21.577602 after 86.95 seconds
+[0m12:26:21.578721 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x103990ef0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10b4c9f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105973b30>]}
+[0m12:26:21.579843 [debug] [MainThread]: Flushing usage events

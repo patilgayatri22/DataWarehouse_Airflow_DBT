@@ -1,0 +1,26 @@
+[2024-10-24T19:04:31.508+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-24T19:04:31.520+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: YfinanceToSnowflake.load scheduled__2024-10-23T02:30:00+00:00 [queued]>
+[2024-10-24T19:04:31.526+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: YfinanceToSnowflake.load scheduled__2024-10-23T02:30:00+00:00 [queued]>
+[2024-10-24T19:04:31.526+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-24T19:04:31.532+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): load> on 2024-10-23 02:30:00+00:00
+[2024-10-24T19:04:31.536+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'YfinanceToSnowflake', 'load', 'scheduled__2024-10-23T02:30:00+00:00', '--job-id', '27', '--raw', '--subdir', 'DAGS_FOLDER/yfinance_to_snowflake.py', '--cfg-path', '/tmp/tmpztuboo5g']
+[2024-10-24T19:04:31.538+0000] {standard_task_runner.py:91} INFO - Job 27: Subtask load
+[2024-10-24T19:04:31.539+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=238) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-10-24T19:04:31.539+0000] {standard_task_runner.py:63} INFO - Started process 250 to run task
+[2024-10-24T19:04:31.560+0000] {task_command.py:426} INFO - Running <TaskInstance: YfinanceToSnowflake.load scheduled__2024-10-23T02:30:00+00:00 [running]> on host 599a8e9540bd
+[2024-10-24T19:04:31.598+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='YfinanceToSnowflake' AIRFLOW_CTX_TASK_ID='load' AIRFLOW_CTX_EXECUTION_DATE='2024-10-23T02:30:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-10-23T02:30:00+00:00'
+[2024-10-24T19:04:31.599+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-24T19:04:31.603+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2024-10-24T19:04:31.604+0000] {connection.py:399} INFO - Snowflake Connector for Python Version: 3.10.0, Python Version: 3.12.3, Platform: Linux-6.10.4-linuxkit-aarch64-with-glibc2.36
+[2024-10-24T19:04:31.605+0000] {connection.py:1239} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2024-10-24T19:04:32.809+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T19:04:33.017+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T19:04:33.911+0000] {logging_mixin.py:188} INFO - INSERT INTO dev.raw_data.stock_price (date, open, close, high, low, volume, symbol) VALUES (
+          '2024-10-23', 234.0800018310547, 230.75999450683594, 235.13999938964844, 227.75999450683594, 52037200, 'AAPL[0]')
+[2024-10-24T19:04:35.142+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T19:04:35.143+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-24T19:04:35.144+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-24T19:04:35.159+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=YfinanceToSnowflake, task_id=load, run_id=scheduled__2024-10-23T02:30:00+00:00, execution_date=20241023T023000, start_date=20241024T190431, end_date=20241024T190435
+[2024-10-24T19:04:35.207+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-24T19:04:35.227+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-24T19:04:35.228+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

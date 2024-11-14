@@ -1,0 +1,26 @@
+[2024-11-12T20:28:37.428+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-11-12T20:28:37.438+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: Pipeline_STOCK_ETL.create_load_incremental manual__2024-11-12T20:28:35.142947+00:00 [queued]>
+[2024-11-12T20:28:37.441+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: Pipeline_STOCK_ETL.create_load_incremental manual__2024-11-12T20:28:35.142947+00:00 [queued]>
+[2024-11-12T20:28:37.441+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-11-12T20:28:37.445+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): create_load_incremental> on 2024-11-12 20:28:35.142947+00:00
+[2024-11-12T20:28:37.452+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=3585) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-11-12T20:28:37.451+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'Pipeline_STOCK_ETL', 'create_load_incremental', 'manual__2024-11-12T20:28:35.142947+00:00', '--job-id', '303', '--raw', '--subdir', 'DAGS_FOLDER/stock_pipeline_ETL_Lab2.py', '--cfg-path', '/tmp/tmpwuli7ypv']
+[2024-11-12T20:28:37.452+0000] {standard_task_runner.py:91} INFO - Job 303: Subtask create_load_incremental
+[2024-11-12T20:28:37.452+0000] {standard_task_runner.py:63} INFO - Started process 3588 to run task
+[2024-11-12T20:28:37.468+0000] {task_command.py:426} INFO - Running <TaskInstance: Pipeline_STOCK_ETL.create_load_incremental manual__2024-11-12T20:28:35.142947+00:00 [running]> on host ff1b9c31ae4f
+[2024-11-12T20:28:37.503+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='Pipeline_STOCK_ETL' AIRFLOW_CTX_TASK_ID='create_load_incremental' AIRFLOW_CTX_EXECUTION_DATE='2024-11-12T20:28:35.142947+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-11-12T20:28:35.142947+00:00'
+[2024-11-12T20:28:37.503+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-11-12T20:28:37.507+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2024-11-12T20:28:37.508+0000] {connection.py:399} INFO - Snowflake Connector for Python Version: 3.10.0, Python Version: 3.12.3, Platform: Linux-6.10.4-linuxkit-aarch64-with-glibc2.36
+[2024-11-12T20:28:37.508+0000] {connection.py:1239} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2024-11-12T20:28:38.302+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-12T20:28:38.724+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-12T20:29:47.837+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-12T20:29:48.585+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-11-12T20:29:48.586+0000] {logging_mixin.py:188} INFO - Stage Table dev.stock.stock_price_stage, Target table create 'dev.stock.stock_price_analysis', Data loaded successfully in both the tables using Incremental Load 
+[2024-11-12T20:29:48.587+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-11-12T20:29:48.588+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-11-12T20:29:48.621+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=Pipeline_STOCK_ETL, task_id=create_load_incremental, run_id=manual__2024-11-12T20:28:35.142947+00:00, execution_date=20241112T202835, start_date=20241112T202837, end_date=20241112T202948
+[2024-11-12T20:29:48.691+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-11-12T20:29:48.725+0000] {taskinstance.py:3498} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-11-12T20:29:48.727+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

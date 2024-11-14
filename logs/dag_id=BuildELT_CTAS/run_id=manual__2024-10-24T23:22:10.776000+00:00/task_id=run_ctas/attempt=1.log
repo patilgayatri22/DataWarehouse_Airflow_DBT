@@ -1,0 +1,36 @@
+[2024-10-24T23:22:12.432+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2024-10-24T23:22:12.450+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: BuildELT_CTAS.run_ctas manual__2024-10-24T23:22:10.776000+00:00 [queued]>
+[2024-10-24T23:22:12.453+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: BuildELT_CTAS.run_ctas manual__2024-10-24T23:22:10.776000+00:00 [queued]>
+[2024-10-24T23:22:12.453+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2024-10-24T23:22:12.457+0000] {taskinstance.py:2330} INFO - Executing <Task(_PythonDecoratedOperator): run_ctas> on 2024-10-24 23:22:10.776000+00:00
+[2024-10-24T23:22:12.463+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'BuildELT_CTAS', 'run_ctas', 'manual__2024-10-24T23:22:10.776000+00:00', '--job-id', '78', '--raw', '--subdir', 'DAGS_FOLDER/build_elt_with_ctas.py', '--cfg-path', '/tmp/tmp9omk7dw5']
+[2024-10-24T23:22:12.466+0000] {standard_task_runner.py:91} INFO - Job 78: Subtask run_ctas
+[2024-10-24T23:22:12.465+0000] {logging_mixin.py:188} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:61 DeprecationWarning: This process (pid=1531) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-10-24T23:22:12.467+0000] {standard_task_runner.py:63} INFO - Started process 1540 to run task
+[2024-10-24T23:22:12.489+0000] {task_command.py:426} INFO - Running <TaskInstance: BuildELT_CTAS.run_ctas manual__2024-10-24T23:22:10.776000+00:00 [running]> on host 599a8e9540bd
+[2024-10-24T23:22:12.524+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='BuildELT_CTAS' AIRFLOW_CTX_TASK_ID='run_ctas' AIRFLOW_CTX_EXECUTION_DATE='2024-10-24T23:22:10.776000+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-10-24T23:22:10.776000+00:00'
+[2024-10-24T23:22:12.525+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2024-10-24T23:22:12.525+0000] {build_elt_with_ctas.py:34} INFO - dev.analytics.session_summary
+[2024-10-24T23:22:12.525+0000] {build_elt_with_ctas.py:35} INFO - SELECT u.*, s.ts
+    FROM dev.raw_data.user_session_channel u
+    JOIN dev.raw_data.session_timestamp s ON u.sessionId=s.sessionId
+    
+[2024-10-24T23:22:12.531+0000] {base.py:84} INFO - Using connection ID 'snowflake_conn' for task execution.
+[2024-10-24T23:22:12.531+0000] {connection.py:399} INFO - Snowflake Connector for Python Version: 3.10.0, Python Version: 3.12.3, Platform: Linux-6.10.4-linuxkit-aarch64-with-glibc2.36
+[2024-10-24T23:22:12.532+0000] {connection.py:1239} INFO - This connection is in OCSP Fail Open Mode. TLS Certificates would be checked for validity and revocation status. Any other Certificate Revocation related exceptions or OCSP Responder failures would be disregarded in favor of connectivity.
+[2024-10-24T23:22:13.235+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T23:22:13.236+0000] {build_elt_with_ctas.py:42} INFO - CREATE OR REPLACE TABLE dev.analytics.session_summary AS SELECT u.*, s.ts
+    FROM dev.raw_data.user_session_channel u
+    JOIN dev.raw_data.session_timestamp s ON u.sessionId=s.sessionId
+    
+[2024-10-24T23:22:14.796+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T23:22:14.798+0000] {logging_mixin.py:188} INFO - SELECT sessionId, COUNT(1) AS cnt FROM dev.analytics.session_summary GROUP BY 1 ORDER BY 2 DESC LIMIT 1
+[2024-10-24T23:22:15.109+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T23:22:15.110+0000] {logging_mixin.py:188} INFO - ('7cdace91c487558e27ce54df7cdb299c', 1) 1
+[2024-10-24T23:22:15.241+0000] {cursor.py:1149} INFO - Number of results in first chunk: 1
+[2024-10-24T23:22:15.241+0000] {python.py:237} INFO - Done. Returned value was: None
+[2024-10-24T23:22:15.242+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2024-10-24T23:22:15.252+0000] {taskinstance.py:1206} INFO - Marking task as SUCCESS. dag_id=BuildELT_CTAS, task_id=run_ctas, run_id=manual__2024-10-24T23:22:10.776000+00:00, execution_date=20241024T232210, start_date=20241024T232212, end_date=20241024T232215
+[2024-10-24T23:22:15.308+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 0
+[2024-10-24T23:22:15.322+0000] {taskinstance.py:3498} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-10-24T23:22:15.322+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

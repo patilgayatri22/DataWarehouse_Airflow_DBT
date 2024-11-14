@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: macd_calculation
+    description: "Analytics model for stock data"
+    columns:
+      - name: date
+        description: "Unique identifier for each stock price record"
+        data_tests:
+          - not_null

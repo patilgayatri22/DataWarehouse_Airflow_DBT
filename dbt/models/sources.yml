@@ -1,0 +1,20 @@
+version: 2
+
+sources:
+  - name: stock
+    database: dev
+    schema: stock
+    description: "Schema which stores raw tables (ETL)"
+    tables:
+      - name: stock_price_analysis
+        identifier: stock_price_analysis
+        description: "Stock data"
+  - name: stock
+    database: dev
+    schema: stock
+    description: "Schema with stores analytics tables (ELT)"
+    tables:
+      - name: macd_calculation
+        identifier: macd_calculation
+        description: "Complete MACD info"
+
